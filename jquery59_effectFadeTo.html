@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery 51 : 마우스 개별 이벤트3</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script> 
+    <style>
+    .lst, .btnFrame{margin: 30px auto; width: 600px; clear: both;}
+    .lst li {float: left; margin-left: 10px; display: none;}
+    .text{clear: both; text-align: center;}
+    h1{text-align: center; margin-top: 1.8rem;}
+    button{display: block; float: left; margin: 24px; padding: 18px; background-color: #2c4d5f; color: fff; outline: 0; border: 0; border-radius: 14px; cursor: pointer;}
+    </style>
+    <script>
+        $(document).ready(function(){
+            var opa = parseFloat($(".lst li").css("opacity"));
+            $("#btn1").click(function(){
+                if(opa < 1){
+                    opa = opa + 0.1;
+                }
+                $(".lst li").clearQueue().fadeTo(300, opa);
+            });
+            $("#btn2").click(function(){
+                if(opa > 0){
+                    opa = opa - 0.1;
+                }
+                $(".lst li").clearQueue().fadeTo(300, opa);
+            });
+        });
+        </script>
+</head>
+<body>
+    <section class="comment">
+        <h1>보이기/숨기기 효과 메소드 - show(), hide(), toggle()</h1>
+        <article class="data">
+            <div class="btnFrame"> 
+                <button id="btn1">보이기</button>
+                <button id="btn2">숨기기</button>
+                <button id="btn3">토글</button>
+            </div>
+            <ul class="lst">
+                <li><img src="a.jpg" alt=""></li>
+                <li><img src="b.jpg" alt=""></li>
+                <li><img src="c.jpg" alt=""></li>
+            </ul>
+            <div class="text">버튼을 누르면, 효과가 실행됩니다.</div>
+        </article>
+    </section>
+    <br><hr><br>
+</body>
+</html>

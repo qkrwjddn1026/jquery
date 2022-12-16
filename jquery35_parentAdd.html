@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery 33 : 선택자의 후손 요소</title>
+    <script src="./jquery-1.12.4.js"></script> 
+    <style>
+    .container { clear:both; width:1000px; margin:20px auto; } 
+    .container:after { content:""; display:block; clear:both; }
+    .data { clear: both; }
+    .data:after { content:""; display:block; clear:both; }
+    </style>
+    <script>
+    $(document).ready(function(){
+        $("p").click(function(){
+        $("p").wrap("<div class='border'>불금 화이팅</div>");
+        });
+    });    
+    </script>
+</head>
+<body>
+    <section class="container">
+        <h1>부모 요소 추가 메소드 - wrap(), wrapAll()</h1>
+        <article class="data">
+            <h2>jquery After Third part -> 312</h2>
+            <p>React -> 37</p>
+            <div>
+                <p>VUE.js -> 1</p>
+            </div>
+            <p>angular -> 54</p>
+            <p>polymer -> 3</p>
+        </article>
+    </section><br><hr><br>
+    <footer><h3><em>copyrignt pjw</em></h3></footer>
+    <article id="data1">데이터1</article>
+</body>
+</html>

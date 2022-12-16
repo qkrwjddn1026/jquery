@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery 33 : 선택자의 후손 요소</title>
+    <script src="./jquery-1.12.4.js"></script> 
+    <style>
+    .container { clear:both; width:1000px; margin:20px auto; } 
+    .container:after { content:""; display:block; clear:both; }
+    .data { clear: both; }
+    .data:after { content:""; display:block; clear:both; }
+    </style>
+    <script>
+    $(document).ready(function(){
+        var cities = ["도시1","도시2","도시3","도시4","도시5","도시6","도시7"]
+        var cards = ["카드1","카드2","카드3","카드4","카드5","카드6","카드7"]
+        $(cities).each(function(){
+            $("<li>"+value+"</li>").appendTo($("#cities_list"));
+        });
+        $(cards).each(function(index,value){
+            $("<li>"+value+"</li>").prependTo($("#card_list"));
+        });
+    });    
+    </script>
+</head>
+<body>
+    <section class="container">
+        <h1>자식 추가 메소드 - append(), appendTo(), prepend(), prependTo()</h1>
+        <article class="data">
+            <div> <b> 내가 살고 싶은 도시 </b> <ul id="cities_list"></ul> </div> 
+            <div> <b> 내가 갖고 싶은 카드 </b> <ul id="card_list"></ul> </div>
+        </article>
+    </section><br><hr><br>
+</body>
+</html>

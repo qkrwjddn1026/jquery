@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>컬랩시블</title>
+    <style>
+    * {margin: 0; padding: 0; }
+    body, html { width: 100%; height: 100%; }
+    .collapBox { width:70%; }
+    .collap { width:100%; }
+    .collap img { display:block; width:100%; }
+    .btn { width:100%; height:42px; line-height:42px;
+    text-align:center; background:#232425; color:#fff;
+    font-size:24px; cursor:pointer; }
+    </style>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script>
+    $(document).ready(function(){
+   //아이디가 btn1인 요소를 클릭하면, 클래스가 collap인 요소를 아래로 펼쳐보이게 하고, 다시 클릭하면, 접혀서 보이지 않도록 컬랩시블을 구현하라.
+     $("#btn1").click(function(){
+                $(".collap").toggle("slow",function(){
+                    var status = $(".collap").css("display");
+                    if(status == "none"){
+                        $(".btn").text("숨겨짐");
+                    }else{
+                        $(".btn").text("보여짐")
+                    }
+                });
+            });
+    });
+    </script>
+</head>
+<body>
+    <div class="collapBox">
+        <div class="collap">
+            <img src="b.jpg" alt="">
+        </div>
+        <div id="btn1" class="btn">열기</div>
+    </div>
+</body>
+</html>

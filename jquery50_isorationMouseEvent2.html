@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery 33 : 선택자의 후손 요소</title>
+    <script src="https://code.jquery.com/jquery-1.8.0.js"></script> 
+    <style>
+    .container { clear:both; width:1000px; margin:20px auto; } 
+    .container:after { content:""; display:block; clear:both; }
+    .data { clear: both; }
+    .data:after { content:""; display:block; clear:both; }
+    div.abs{width : 150px; height: 60px; position: absolute; left: 220px; top: 35px; border-color: green; cursor: pointer;}
+    div{transition-duration: 0ms;}
+    </style>
+    <script>
+    $(document).ready(function(){
+    $("img").mousedown(function(){
+        $("p:first").html(event.clientX + ", "+event.clientY );
+        $("p.middle").html(event.screenX + ", "+ event.screenY);
+        $("p:last").html(event.pageX + ", "+ event.pageY);
+    });
+});
+    </script>
+</head>
+<body>
+    <section class="container">
+        <h1>마우스 개별 이벤트 메소드2 </h1>
+        <div>click, dbclick, mouseover, mouseout, mousedown, mouseup, mouseenter, mouseleave, hover, mousemove, contextmenu, wheel 등이 있다.</div>
+        <article class="data">
+          <img src="a.jpg" alt="pic1">
+          <p></p> <p class="middle"></p> <p></p>
+        </article>
+    </section><br><hr><br>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery 33 : 선택자의 후손 요소</title>
+    <script src="./jquery-1.12.4.js"></script> 
+    <style>
+    .container { clear:both; width:1000px; margin:20px auto; } 
+    .container:after { content:""; display:block; clear:both; }
+    .data { clear: both; }
+    .data:after { content:""; display:block; clear:both; }
+    </style>
+    <script>
+    $(document).ready(function(){
+        $(".box").click(function(){
+            $(this).replaceWith("<h1 class='bd'>Replace Text1</h1>");
+        });
+    });    
+    </script>
+</head>
+<body>
+    <section class="container">
+        <h1>엘리먼트 변경 메소드 - replaceWith()</h1>
+        <article class="data">
+            <div class="box one">1</div>
+            <div class="box two">2</div>
+            <div class="box three">3</div>
+            <div class="box four">4</div>
+        </article>
+    </section><br><hr><br>
+    <article id="data1">데이터1</article>
+</body>
+</html>

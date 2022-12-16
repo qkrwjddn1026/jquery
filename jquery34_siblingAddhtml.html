@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery 33 : 선택자의 후손 요소</title>
+    <script src="./jquery-1.12.4.js"></script> 
+    <style>
+    .container { clear:both; width:1000px; margin:20px auto; } 
+    .container:after { content:""; display:block; clear:both; }
+    .data { clear: both; }
+    .data:after { content:""; display:block; clear:both; }
+    </style>
+    <script>
+    $(document).ready(function(){
+    $("<div class='container'>니가 좋아하는 사람 : 홍길동</div>").insertAfter($("header"));  
+    $("<div class='container'>니가 좋아하는 사람 : 홍길동</div>").insertBefore($("footer"));
+    });    
+    </script>
+</head>
+<body>
+    <header><h1>오늘은 불금!</h1></header>
+    <section class="container">
+        <h1>형제 추가 메소드 - before(), insertBefore(), after(), insertAfter()</h1>
+    </section><br><hr><br>
+    <footer><h3><em>copyrignt pjw</em></h3></footer>
+    <article id="data1">데이터1</article>
+</body>
+</html>

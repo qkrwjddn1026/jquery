@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery 33 : 선택자의 후손 요소</title>
+    <script src="./jquery-1.12.4.js"></script> 
+    <style>
+    .container { clear:both; width:1000px; margin:20px auto; } 
+    .container:after { content:""; display:block; clear:both; }
+    .data { clear: both; }
+    .data:after { content:""; display:block; clear:both; }
+    div.abs{width : 150px; height: 60px; position: absolute; left: 220px; top: 35px; border-color: green; cursor: pointer;}
+    p{ width: 200px; height: 60px; margin: 20px; text-align: center; background: red; cursor: pointer; color: #fff; line-height: 60px;}
+    </style>
+    <script>
+    $(document).ready(function(){
+    $("img").bind("dblclick",function(event){
+        var $t = $(event.target);
+        $t.width($t.width()*1.5);
+    });    
+});
+    </script>
+</head>
+<body>
+    <section class="container">
+        <h1>범용 이벤트 적용 메소드 - bind(), on()</h1>
+        <article class="data">
+          <img src="c.jpg" alt="pic1">
+        </article>
+    </section><br><hr><br>
+</body>
+</html>

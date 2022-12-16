@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>     
+    <script src="jquery-1.12.4.js"></script>
+    <script>
+     $(document).ready(function(){
+        $("button").on("click",function(){
+            $("div").css("background","yellow").filter(".mid").css("border-color","red");
+        });
+    });
+    </script>
+</head>
+<body>
+    <section class="container">
+        <h1>선택자 필터 메소드 - filter()</h1>
+        <article class="data">
+            <button id="btn1" style="clear:both">버튼</button>
+            <div id="first"></div> 
+            <div id="second" class="mid"></div> 
+            <div id="third" class="mid"></div>
+            <div id="fourth" class="mid"></div>
+            <div id="fifth" class="mid"></div>
+            <div id="sixth"></div>
+        </article>
+    </section>
+</body>
+</html>
